@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
     <div class="container">
         <h1>For Kinza 🌹</h1>
         <p class="subtitle">My favorite place in the world is right next to you.</p>
         
+        <!-- Background Music Player -->
+        <audio id="bg-music" src="music.mp3" loop></audio>
+
         <!-- Screen 1: Together Forever -->
         <div id="proposal-box">
             <h3 id="question-text">Would you be my together forever? ✨</h3>
@@ -20,11 +26,31 @@
             </div>
         </div>
 
-        <!-- Screen 2: Hidden Marriage Box (Will show up after clicking Yes) -->
+        <!-- Screen 2: Hidden Marriage Box & Photo Gallery -->
         <div id="marriage-box" style="display: none;">
             <h3 class="marry-title">Would you marry me in the future? 💍</h3>
             <p class="love-note">I want to spend the rest of my life building dreams with you.</p>
             <button id="final-yes-btn" onclick="celebrate()">Yes, a thousand times yes! ❤️</button>
+
+            <!-- PHOTO GALLERY GRID -->
+            <div class="gallery-title">Our Favorite Moments ✨</div>
+            <div class="gallery-grid">
+                <!-- Polaroid 1 -->
+                <div class="polaroid">
+                    <img src="photo1.png" alt="Memory 1">
+                    <div class="caption">The happiest days... ✨</div>
+                </div>
+                <!-- Polaroid 2 -->
+                <div class="polaroid">
+                    <img src="photo2.png" alt="Memory 2">
+                    <div class="caption">With my favorite person ❤️</div>
+                </div>
+                <!-- Polaroid 3 -->
+                <div class="polaroid">
+                    <img src="photo3.png" alt="Memory 3">
+                    <div class="caption">Forever & Always 🌹</div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

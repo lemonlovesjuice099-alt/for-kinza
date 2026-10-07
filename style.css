@@ -9,16 +9,57 @@ body {
     min-height: 100vh;
     color: #4a1525;
     text-align: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* FLOATING HEARTS ANIMATION SYSTEM */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
     overflow: hidden;
 }
 
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    color: rgba(224, 68, 107, 0.6);
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-105vh) translateX(var(--random-x, 20px)) rotate(var(--random-rotate, 360deg));
+        opacity: 0;
+    }
+}
+
 .container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 40px 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(224, 86, 132, 0.25);
-    max-width: 500px;
+    max-width: 600px;
     width: 90%;
+    margin: 20px auto;
+    position: relative;
+    z-index: 10;
 }
 
 h1 { font-size: 2.5rem; margin-bottom: 5px; color: #cc1b5b; }
@@ -44,7 +85,7 @@ button {
 }
 
 #yes-btn { background-color: #e0446b; color: white; z-index: 10; }
-#no-btn { background-color: #8a7a80; color: white; position: absolute; }
+#no-btn { background-color: #8a7a80; color: white; position: absolute; left: 55%; }
 
 #marriage-box {
     animation: fadeIn 0.8s ease forwards;
@@ -59,10 +100,58 @@ button {
     font-size: 1.1rem;
     padding: 14px 30px;
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    margin-bottom: 40px;
 }
 
-#final-yes-btn:hover {
-    transform: scale(1.05);
+.gallery-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #cc1b5b;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-top: 2px dashed #ffb6c1;
+    padding-top: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    max-width: 160px;
+    transition: transform 0.3s ease;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.polaroid .caption {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.polaroid:nth-child(odd) { transform: rotate(-3deg); }
+.polaroid:nth-child(even) { transform: rotate(3deg); }
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.08);
+    z-index: 50;
 }
 
 @keyframes fadeIn {
