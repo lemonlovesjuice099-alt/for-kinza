@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kinza ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>For Kinza 🌹</h1>
+        <p class="subtitle">My favorite place in the world is right next to you.</p>
+        
+        <!-- Screen 1: Together Forever -->
+        <div id="proposal-box">
+            <h3 id="question-text">Would you be my together forever? ✨</h3>
+            <div class="btn-group">
+                <button id="yes-btn" onclick="nextQuestion()">Yes! 🥰</button>
+                <button id="no-btn">No 😢</button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Hidden Marriage Box (Will show up after clicking Yes) -->
+        <div id="marriage-box" style="display: none;">
+            <h3 class="marry-title">Would you marry me in the future? 💍</h3>
+            <p class="love-note">I want to spend the rest of my life building dreams with you.</p>
+            <button id="final-yes-btn" onclick="celebrate()">Yes, a thousand times yes! ❤️</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
